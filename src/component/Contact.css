@@ -1,0 +1,50 @@
+.Contactcontainer {
+  position: relative;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #1e293b;
+  color: white;
+}
+.Contactcontainer p {
+  text-align: center;
+}
+.contactcontainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+.contactBoxa {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.icoBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.icologo {
+  font-size: 20px;
+}
+.contactBoxb {
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 745px) {
+  .Contactcontainer {
+    padding: 10px;
+  }
+}

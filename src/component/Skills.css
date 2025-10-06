@@ -1,0 +1,511 @@
+.Skillcontainer {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: column;
+  gap: 10px;
+}
+.skillworld {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skilllanContainer {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  z-index: 1;
+}
+.skilllanContainer p {
+  text-align: center;
+}
+.skillcona {
+  position: relative;
+  min-width: 49%;
+}
+.lanContainer {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px;
+}
+.lanBox {
+  flex: 1 0 100px;
+  position: relative;
+  height: 100px;
+  width: 180px;
+  border-radius: 5px;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  box-shadow: 0px 7px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.aniContainer {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+#pra {
+  position: relative;
+  transition: 1s;
+}
+#pra::after {
+  content: "HTML5 ";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: red;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#pra:hover::after {
+  opacity: 1;
+}
+.html {
+  height: 70%;
+  width: 70%;
+  object-fit: contain;
+}
+.css {
+  height: 85%;
+  width: 85%;
+  object-fit: contain;
+}
+.bootstrap {
+  height: 50%;
+  width: 50%;
+  object-fit: contain;
+}
+.bootstrap {
+  height: 60%;
+  width: 60%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#css {
+  position: relative;
+  transition: 1s;
+}
+#css::after {
+  content: "CSS ";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: royalblue;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#css:hover::after {
+  opacity: 1;
+}
+
+#bootstrap {
+  position: relative;
+  transition: 1s;
+}
+#bootstrap::after {
+  content: "BOOTSTRAP ";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #563f7b;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#bootstrap:hover::after {
+  opacity: 1;
+}
+
+#js {
+  position: relative;
+  transition: 1s;
+}
+#js::after {
+  content: "JAVA SCRIPT ";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #f8dc3d;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#js:hover::after {
+  opacity: 1;
+}
+
+#react {
+  position: relative;
+  transition: 1s;
+}
+#react::after {
+  content: "REACT";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #64d9ff;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#react:hover::after {
+  opacity: 1;
+}
+
+#flask {
+  position: relative;
+  transition: 1s;
+}
+#flask::after {
+  content: "FLASK";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: black;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#flask:hover::after {
+  opacity: 1;
+}
+
+#express {
+  position: relative;
+  transition: 1s;
+}
+#express::after {
+  content: "EXPRESS";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #f6e11d;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: black;
+  font-weight: 600;
+}
+#express:hover::after {
+  opacity: 1;
+}
+
+#node {
+  position: relative;
+  transition: 1s;
+}
+#node::after {
+  content: "NODE JS";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #82cd28;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#node:hover::after {
+  opacity: 1;
+}
+
+#mysql {
+  position: relative;
+  transition: 1s;
+}
+#mysql::after {
+  content: "MYSQL";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #e38c08;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#mysql:hover::after {
+  opacity: 1;
+}
+
+#mongodb {
+  position: relative;
+  transition: 1s;
+}
+#mongodb::after {
+  content: "MONGODB";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #54b540;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#mongodb:hover::after {
+  opacity: 1;
+}
+
+#sqlite {
+  position: relative;
+  transition: 1s;
+}
+#sqlite::after {
+  content: "SQLITE";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #0f80cc;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#sqlite:hover::after {
+  opacity: 1;
+}
+
+#pandas {
+  position: relative;
+  transition: 1s;
+}
+#pandas::after {
+  content: "PANDAS";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #130753;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#pandas:hover::after {
+  opacity: 1;
+}
+
+#pandas {
+  position: relative;
+  transition: 1s;
+}
+#pandas::after {
+  content: "PANDAS";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #130753;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#pandas:hover::after {
+  opacity: 1;
+}
+
+#matplolib {
+  position: relative;
+  transition: 1s;
+}
+#matplolib::after {
+  content: "MATPLOTLIB";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #235e80;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#matplolib:hover::after {
+  opacity: 1;
+}
+
+#seaborn {
+  position: relative;
+  transition: 1s;
+}
+#seaborn::after {
+  content: "SEABORN";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #4c507c;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#seaborn:hover::after {
+  opacity: 1;
+}
+
+#supervised {
+  position: relative;
+  transition: 1s;
+}
+#supervised::after {
+  content: "SUPERVISED LEARNING";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #5635af;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: 600;
+}
+#supervised:hover::after {
+  opacity: 1;
+}
+
+#unsupervisedlearning {
+  position: relative;
+  transition: 1s;
+}
+#unsupervisedlearning::after {
+  content: "UNSUPERVISED LEARNING";
+  height: 100px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  background-color: #23fc06;
+  transition: 1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+}
+#unsupervisedlearning:hover::after {
+  opacity: 1;
+}
+@media (max-width: 745px) {
+  .Skillcontainer {
+    padding: 10px;
+  }
+}
