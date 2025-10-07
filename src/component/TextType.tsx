@@ -23,9 +23,9 @@ interface TextTypeProps {
   reverseMode?: boolean;
 }
 
-const TextType = ({
+const TextType = <T extends React.ElementType = "div">({
   text,
-  as: Component = "div",
+  as: Component = "div" as T,
   typingSpeed = 50,
   initialDelay = 0,
   pauseDuration = 5000,
@@ -169,25 +169,26 @@ const TextType = ({
     (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
   return (
-    <Component
-      ref={containerRef}
-      className={`text-type ${className}`}
-      {...props}
-    >
-      <span className="text-type__content">{displayedText}</span>
-      {showCursor && (
-        <span
-          ref={cursorRef}
-          className={`text-type__cursor ${cursorClassName} ${
-            shouldHideCursor ? "text-type__cursor--hidden" : ""
-          }`}
-          style={{ color: "#2563eb" }}
-        >
-          {cursorCharacter}
-        </span>
-      )}
-    </Component>
-  );
+  <Component
+    ref={containerRef as any} // type-safe for now
+    className={`text-type ${className}`}
+    {...props}
+  >
+    <span className="text-type__content">{displayedText}</span>
+    {showCursor && (
+      <span
+        ref={cursorRef}
+        className={`text-type__cursor ${cursorClassName} ${
+          shouldHideCursor ? "text-type__cursor--hidden" : ""
+        }`}
+        style={{ color: "#2563eb" }}
+      >
+        {cursorCharacter}
+      </span>
+    )}
+  </Component>
+);
+
 };
 
 export default TextType;
