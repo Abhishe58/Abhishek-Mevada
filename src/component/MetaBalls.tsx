@@ -250,22 +250,25 @@ const MetaBalls = ({
     resize();
 
     function onPointerMove(e: PointerEvent) {
-      if (!enableMouseInteraction) return;
-      const rect = container.getBoundingClientRect();
-      const px = e.clientX - rect.left;
-      const py = e.clientY - rect.top;
-      pointerX = (px / rect.width) * gl.canvas.width;
-      pointerY = (1 - py / rect.height) * gl.canvas.height;
-    }
+  if (!enableMouseInteraction) return;
+  const el = containerRef.current;
+  if (!el) return; // stop if container is null
+  const rect = el.getBoundingClientRect();
+  const px = e.clientX - rect.left;
+  const py = e.clientY - rect.top;
+  pointerX = (px / rect.width) * gl.canvas.width;
+  pointerY = (1 - py / rect.height) * gl.canvas.height;
+}
 
-    function onPointerEnter() {
-      if (!enableMouseInteraction) return;
-      pointerInside = true;
-    }
-    function onPointerLeave() {
-      if (!enableMouseInteraction) return;
-      pointerInside = false;
-    }
+function onPointerEnter() {
+  if (!enableMouseInteraction) return;
+  pointerInside = true;
+}
+
+function onPointerLeave() {
+  if (!enableMouseInteraction) return;
+  pointerInside = false;
+}
 
     container.addEventListener("pointermove", onPointerMove);
     container.addEventListener("pointerenter", onPointerEnter);
