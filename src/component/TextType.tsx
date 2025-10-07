@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import { gsap } from "gsap";
-import "./Texttype.css";
 
-interface TextTypeProps {
+interface TextTypeProps<T extends React.ElementType = "div"> {
   text: string[];
-  as?: keyof JSX.IntrinsicElements;
+  as?: T;
   typingSpeed?: number;
   initialDelay?: number;
   pauseDuration?: number;
@@ -25,7 +24,7 @@ interface TextTypeProps {
 
 const TextType = <T extends React.ElementType = "div">({
   text,
-  as: Component = "div" as T,
+  as,
   typingSpeed = 50,
   initialDelay = 0,
   pauseDuration = 5000,
@@ -43,14 +42,17 @@ const TextType = <T extends React.ElementType = "div">({
   startOnVisible = false,
   reverseMode = false,
   ...props
-}: TextTypeProps) => {
+}: TextTypeProps<T> &
+  Omit<React.ComponentPropsWithoutRef<T>, keyof TextTypeProps>) => {
+  const Component = as || "div";
+
   const [displayedText, setDisplayedText] = useState("");
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [isVisible, setIsVisible] = useState(!startOnVisible);
   const cursorRef = useRef<HTMLSpanElement>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLElement>(null);
 
   const textArray = useMemo(
     () => (Array.isArray(text) ? text : [text]),
@@ -169,25 +171,28 @@ const TextType = <T extends React.ElementType = "div">({
     (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
   return (
-  <Component
-    ref={containerRef as any} // type-safe for now
-    className={`text-type ${className}`}
-    {...props}
-  >
-    <span className="text-type__content">{displayedText}</span>
-    {showCursor && (
-      <span
-        ref={cursorRef}
-        className={`text-type__cursor ${cursorClassName} ${
-          shouldHideCursor ? "text-type__cursor--hidden" : ""
-        }`}
-        style={{ color: "#2563eb" }}
-      >
-        {cursorCharacter}
-      </span>
-    )}
-  </Component>
-);
+    <Component
+      ref={containerRef as any} // okay to keep as any
+      className={`text-type ${className}`}
+      {...props}
+    >
+      <span className="text-type__content">{displayedText}</span>
+      {showCursor && (
+        <span
+          ref={cursorRef}
+          className={`text-type__cursor ${cursorClassName} ${
+            hideCursorWhileTyping &&
+            (currentCharIndex < text[currentTextIndex].length || isDeleting)
+              ? "text-type__cursor--hidden"
+              : ""
+          }`}
+          style={{ color: "#2563eb" }}
+        >
+          {cursorCharacter}
+        </span>
+      )}
+    </Component>
+  );
 
 };
 
