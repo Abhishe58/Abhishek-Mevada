@@ -15,13 +15,13 @@ export default function Contact() {
             <a href="">abhishekmevada85@gmail.com</a>
             <div className="icoBox">
               <a href="" className="icologo">
-                <ion-icon name="logo-github"></ion-icon>
+                GitHub
+                              </a>
+              <a href="" className="icologo">
+                Linkdin 
               </a>
               <a href="" className="icologo">
-                <ion-icon name="logo-linkedin"></ion-icon>
-              </a>
-              <a href="" className="icologo">
-                <ion-icon name="logo-instagram"></ion-icon>
+                Instagram
               </a>
             </div>
           </div>
