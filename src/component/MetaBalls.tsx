@@ -232,18 +232,20 @@ const MetaBalls = ({
     let pointerY = 0;
 
     function resize() {
-      if (!container) return;
-      const width = container.clientWidth;
-      const height = container.clientHeight;
-      renderer.setSize(width * dpr, height * dpr);
-      gl.canvas.style.width = width + "px";
-      gl.canvas.style.height = height + "px";
-      program.uniforms.iResolution.value.set(
-        gl.canvas.width,
-        gl.canvas.height,
-        0
-      );
-    }
+  const el = containerRef.current;
+  if (!el) return;
+  const width = el.clientWidth;
+  const height = el.clientHeight;
+  renderer.setSize(width * dpr, height * dpr);
+  gl.canvas.style.width = width + "px";
+  gl.canvas.style.height = height + "px";
+  program.uniforms.iResolution.value.set(
+    gl.canvas.width,
+    gl.canvas.height,
+    0
+  );
+}
+
     window.addEventListener("resize", resize);
     resize();
 
