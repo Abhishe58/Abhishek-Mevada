@@ -166,9 +166,9 @@ const TextType = <T extends React.ElementType = "div">({
     onSentenceComplete,
   ]);
 
-  const shouldHideCursor =
-    hideCursorWhileTyping &&
-    (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
+  // const shouldHideCursor =
+  //   hideCursorWhileTyping &&
+  //   (currentCharIndex < textArray[currentTextIndex].length || isDeleting);
 
   return (
     <Component
